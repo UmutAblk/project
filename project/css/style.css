@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap");
+
+:root{
+    --primary:rgb(4, 161, 64);
+    --white: #ffffff;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style: none;
+    transition: .2s linear;
+}
+body{
+    background: #161515;
+    color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+section{
+    padding: 5rem 7%;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--primary);
+    border-radius: 5rem;
+}
+
+.baslik{
+    font-size: 4rem;
+    color: var(--primary);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 6rem;
+}
+
+.btn{
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    display: inline-block;
+    background:rgb(4, 161, 64);
+    color:#ffffff;
+    box-shadow: var(--box-shadow);
+    padding: .7rem 3rem;
+    border-radius: 5rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+}
+
+.btn::before,
+.btn::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: #0c012c;
+    z-index: -1;
+    transition: .3s linear;
+}
+
+.btn::before{
+    left: 0;
+}
+
+.btn::after{
+    right: 0;
+}
+
+.btn:hover:before,
+.btn:hover::after{
+    width: 100%;
+}
+
+.header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5rem 9%;
+}
+
+.header.active{
+    background: #040608;
+    padding: 2rem 9%;
+
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--white);
+}
+
+.header .logo i{
+    padding-right: .5rem;
+    color: var(--primary);
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    color: var(--white);
+    margin: 0 1rem;
+}
+
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+    color: var(--primary);
+}
+
+#menu{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    color: var(--primary);
+    cursor: pointer;
+    display: none;
+}
+
+.ana{
+    background: url(../images/resimana.jpg) no-repeat;
+    min-height: 110vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    
+}
+
+.ana .content{
+    max-width: 55rem;
+}
+
+.ana .content h3{
+    font-size: 7rem;
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.ana .content h3 span{
+    color: var(--primary);
+    text-transform: uppercase;
+}
+.ana .content h4 span{
+    color: var(--primary);
+    text-transform: uppercase;
+}
+.ana .content p{
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.hknda .orta{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hknda .orta .content{
+    flex: 1 1 40rem;
+}
+
+.hknda .orta .content span{
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.hknda .orta .content h3{
+    font-size: 2.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+.hknda .orta .content p{
+    font-size: 1.4rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.hknda .orta .content ul li{
+    font-size: 1.7rem;
+    color: var(--white);
+    padding-top: 1.5rem;
+}
+
+.hknda .orta .content ul li i{
+    color: var(--primary);
+    padding-right: 1rem;
+}
+
+.hknda .orta .content .btn{
+    margin: 3rem 0;
+}
+
+.hknda .orta .image{
+    flex: 1 1 30rem;
+}
+
+.hknda .orta .image img{
+    width: 100%;
+    height: 100%;
+    border: 0.50rem solid var(--primary);
+}
+
+.hzmt .snf-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.hzmt .snf-container .snf{
+    height: 25rem;
+    flex: 1 1 30rem;
+    border: 0.50rem solid var(--primary);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hzmt .snf-container .snf img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hzmt .snf-container .snf .content{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    padding-top: 8rem;
+    text-align: center;
+}
+
+.hzmt .snf-container .snf:hover .content{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.hzmt .snf-container .snf .content h3{
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+.fiyat .snf-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.fiyat .snf-container .snf{
+    padding: 2rem;
+    text-align: center;
+    border: 0.1rem solid rgba(255, 255, 255, .2);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.fiyat .snf-container .snf h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--primary);
+    padding-top: 1rem;
+}
+
+.fiyat .snf-container .snf .price{
+    font-size: 6rem;
+    padding-top: 1rem;
+    font-weight: bolder;
+}
+
+.fiyat .snf-container .snf .price span{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.fiyat .snf-container .snf .month{
+    font-size: 2rem;
+    color: #666;
+}
+
+.fiyat .snf-container .snf .list{
+    padding: 1rem 0;
+}
+
+.fiyat .snf-container .snf .list p{
+    font-size: 1.7rem;
+    color: #ccc;
+    line-height: 2;
+}
+
+.fiyat .snf-container .snf .list p i{
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.fiyat .snf-container .snf .list p i.fa-times{
+    color: var(--white);
+}
+
+.footer .snf-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .snf-container .snf h3{
+    font-size: 2.2rem;
+    padding: 1rem 0;
+    color: var(--primary);
+}
+
+.footer .snf-container .snf p{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.footer .snf-container .snf a{
+    display: block;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    color: var(--white);
+}
+
+.footer .snf-container .snf a i{
+    color: var(--primary);
+    padding-right: .5rem;
+}
+
+.footer .snf-container .snf a:hover{
+    color: var(--primary);
+}
+
+.footer .snf-container .snf a:hover i{
+    padding-right: 3rem;
+}
+
+.footer .ikon{
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer .ikon a{
+    font-size: 2rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    color: var(--primary);
+    border: .1rem solid var(--primary);
+    margin: .3rem;
+    border-radius: 50%;
+}
+
+.footer .ikon a:hover{
+    color: var(--white);
+    background: var(--primary);
+    transform: rotate(360deg);
+}
+
+.footer .credit{
+    border-top: .1rem solid rgba(255, 255, 255, .2);
+    font-size: 2rem;
+    margin-top: 2.5rem;
+    padding: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer .credit span{
+    color: var(--primary);
+}
+
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+ul li ul li { 
+  background: #000000; 
+  display: block; 
+  
+}
+ul li ul li:hover {  background:rgb(87, 100, 253) }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px){
+
+    #menu{
+        display: inline-block;
+    }
+    .fa-times{
+        transform: rotate(180deg);
+    }
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: #040608;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+    }
+    .ana{
+        background-position: left;
+    }
+    .ana .content h3{
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .ana .content h3{
+        font-size: 4rem;
+    }
+}
